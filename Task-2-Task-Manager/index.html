@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Productivity Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        <header class="header">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                <h1>TaskFlow <span>✓</span></h1>
+                <p class="subtitle">Plan your day. Get things done.</p>
+            </div>
+            <div class="date-display" id="todayDate"></div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Tasks</p>
+                <h2 id="totalCount">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Active Tasks</p>
+                <h2 id="activeCount">0</h2>
+            </div>
+            <div class="stat-card">
+                <p>Completed</p>
+                <h2 id="completedCount">0</h2>
+            </div>
+        </section>
+
+        <section class="task-form">
+            <h2>Add a New Task</h2>
+
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    required
+                >
+
+                <div class="form-row">
+                    <select id="categoryInput" required>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Study">Study</option>
+                    </select>
+
+                    <input type="date" id="dueDateInput" required>
+
+                    <button type="submit" class="add-btn">+ Add Task</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="tasks-section">
+            <div class="tasks-heading">
+                <h2>My Tasks</h2>
+                <span id="taskSummary">0 tasks</span>
+            </div>
+
+            <div class="toolbar">
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+
+                <input type="search" id="searchInput" placeholder="Search tasks...">
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="emptyMessage" class="empty-message">
+                No tasks here yet. Add a task to get started!
+            </p>
+        </section>
+
+        <footer>
+            <p>TaskFlow · Stay organised, stay productive.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
