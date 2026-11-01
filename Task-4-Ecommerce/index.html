@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase | Online Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">Shop<span>Ease.</span></a>
+
+        <div class="nav-actions">
+            <button id="cartButton" class="cart-button">
+                🛒 Cart <span id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">YOUR EVERYDAY SHOPPING DESTINATION</p>
+                <h1>Find your next <span>favourite.</span></h1>
+                <p>Discover products you'll love at prices you'll enjoy.</p>
+            </div>
+        </section>
+
+        <section class="catalogue">
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Products</h2>
+                    <p>Browse our collection</p>
+                </div>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <div class="category-filters" id="categoryFilters">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="electronics">Electronics</button>
+                <button class="category-btn" data-category="jewelery">Jewelry</button>
+                <button class="category-btn" data-category="men's clothing">Men's Clothing</button>
+                <button class="category-btn" data-category="women's clothing">Women's Clothing</button>
+            </div>
+
+            <p id="productMessage" class="message">Loading products...</p>
+
+            <div id="productGrid" class="product-grid"></div>
+        </section>
+
+    </main>
+
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <aside id="cartPanel" class="cart-panel">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <button id="closeCart" class="close-btn" aria-label="Close cart">×</button>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="cart-footer">
+            <div class="price-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="price-row">
+                <span>Tax (5%)</span>
+                <span id="tax">$0.00</span>
+            </div>
+            <div class="price-row">
+                <span>Shipping</span>
+                <span id="shipping">$0.00</span>
+            </div>
+            <div class="price-row total-row">
+                <strong>Total</strong>
+                <strong id="total">$0.00</strong>
+            </div>
+
+            <button id="checkoutButton" class="checkout-btn">
+                Proceed to Checkout
+            </button>
+        </div>
+    </aside>
+
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn" aria-label="Close checkout">×</button>
+            <div class="success-icon">✓</div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for shopping with ShopEase.</p>
+            <p class="demo-note">This is a demonstration checkout. No real payment was made.</p>
+            <button id="continueShopping" class="checkout-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>ShopEase · A simple shopping experience.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
