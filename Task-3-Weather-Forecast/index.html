@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f1e9">
+    <title>Atmos | Worldwide Weather Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="app">
+
+    <header class="topbar">
+        <a class="brand" href="#">ATMOS<span>.</span></a>
+        <span class="live-status"><i></i> WORLDWIDE WEATHER INTELLIGENCE</span>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">YOUR PERSONAL WEATHER SPACE</p>
+            <h1>Feel the<br><span>atmosphere.</span></h1>
+            <p class="hero-description">
+                Explore live weather conditions and forecasts from around the world.
+            </p>
+
+            <div class="location-panel">
+                <p class="panel-title">EXPLORE A LOCATION</p>
+
+                <label for="countrySelect">Country</label>
+                <select id="countrySelect">
+                    <option value="">Loading countries...</option>
+                </select>
+
+                <label for="stateSelect">State / Province / Region</label>
+                <select id="stateSelect" disabled>
+                    <option value="">Choose a country first</option>
+                </select>
+
+                <label for="citySelect">City / Town</label>
+                <select id="citySelect" disabled>
+                    <option value="">Choose a region first</option>
+                </select>
+
+                <div class="district-display">
+                    <span>DETECTED DISTRICT / ADMINISTRATIVE AREA</span>
+                    <strong id="districtValue">Select a city to detect its area</strong>
+                </div>
+
+                <button id="exploreButton" type="button" disabled>
+                    Explore Weather →
+                </button>
+
+                <p id="message" class="message">
+                    Choose your location to discover its weather.
+                </p>
+            </div>
+        </div>
+
+        <div class="weather-visual" id="weatherVisual">
+            <div class="sun-orb"></div>
+            <div class="visual-label">WEATHER, REIMAGINED</div>
+        </div>
+    </section>
+
+    <section id="weatherSection" class="weather-section hidden">
+
+        <div class="location-heading">
+            <div>
+                <p class="eyebrow">CURRENT CONDITIONS</p>
+                <h2 id="cityName">—</h2>
+                <p id="locationDetails">—</p>
+                <p id="currentDate">—</p>
+            </div>
+
+            <div class="current-weather">
+                <span id="weatherIcon">☀️</span>
+                <div>
+                    <h2 id="temperature">--°</h2>
+                    <p id="weatherDescription">—</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-grid">
+            <article class="detail-card">
+                <span>FEELS LIKE</span>
+                <h3 id="feelsLike">--°</h3>
+                <p>Perceived temperature</p>
+            </article>
+
+            <article class="detail-card">
+                <span>HUMIDITY</span>
+                <h3 id="humidity">--%</h3>
+                <p>Air moisture level</p>
+            </article>
+
+            <article class="detail-card">
+                <span>WIND SPEED</span>
+                <h3 id="wind">--</h3>
+                <p>km/h</p>
+            </article>
+
+            <article class="detail-card">
+                <span>AIR PRESSURE</span>
+                <h3 id="pressure">--</h3>
+                <p>hPa</p>
+            </article>
+        </div>
+
+        <div class="sun-card">
+            <div>
+                <span>🌅 SUNRISE</span>
+                <strong id="sunrise">--:--</strong>
+            </div>
+            <div>
+                <span>🌇 SUNSET</span>
+                <strong id="sunset">--:--</strong>
+            </div>
+        </div>
+
+        <div class="insight-card">
+            <p class="eyebrow">ATMOS WEATHER INSIGHT</p>
+            <h3 id="insightTitle">Understanding your sky</h3>
+            <p id="weatherInsight">Your weather insight will appear here.</p>
+        </div>
+
+        <section class="forecast-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">PLAN AHEAD</p>
+                    <h2>Five-day forecast</h2>
+                </div>
+                <span class="forecast-tag">UPCOMING DAYS</span>
+            </div>
+
+            <div id="forecastGrid" class="forecast-grid"></div>
+        </section>
+    </section>
+
+    <footer>
+        <span>ATMOS. — WEATHER, WITH PERSPECTIVE.</span>
+        <span>Weather data by Open-Meteo</span>
+    </footer>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
